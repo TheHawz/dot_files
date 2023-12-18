@@ -1,0 +1,9 @@
+[push]
+	autoSetupRemote = true
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+[core]
+	excludesfiles = /Users/pablo.losada/.gitignore_global
