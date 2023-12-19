@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=( git python zsh-autosuggestions )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,3 +109,34 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+# Aliases:
+alias ls="ls -lsaG"
+alias ltv="cd ~/code/sp-marketing-ltv-model/"
+alias etl="cd ~/code/sp-marketing-etl"
+alias sup="cd ~/code/sp-marketing-support/"
+alias mkt="cd ~/code/sp-marketing"
+alias azk="cd ~/code/sp-analytics-azkaban/"
+alias ad="cd ~/code/sp-marketing-anomaly-detection/"
+alias xlift="cd ~/code/zynga/xlift"
+alias xlift_cli="cd ~/code/zynga/xlift_cli"
+
+
+# GOWSUME ASSUME ROLE:
+function gass () {
+ local role
+ if [[ "$1" == "pro" ]]; then
+    role="pro:sp-analytics-strategist-rw"
+ elif [[ "$1" == "analytics" ]]; then
+    role="analytics:sp-admin-rw"
+ fi
+
+ if [ -n "$role" ]; then
+    export $(/Applications/gowsumed.app/Contents/MacOS/gowsume use "$role")
+    echo "Role $role correctly assumed."
+ else
+    echo "'$1' is not a valid argument. Valid arguments are 'pro' or 'analytics'."
+ fi
+}
+
