@@ -112,16 +112,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 # Aliases:
-alias ls="ls -lsaG"
-alias ltv="cd ~/code/sp-marketing-ltv-model/"
-alias etl="cd ~/code/sp-marketing-etl"
-alias sup="cd ~/code/sp-marketing-support/"
-alias mkt="cd ~/code/sp-marketing"
-alias azk="cd ~/code/sp-analytics-azkaban/"
-alias ad="cd ~/code/sp-marketing-anomaly-detection/"
-alias xlift="cd ~/code/zynga/xlift"
-alias xlift_cli="cd ~/code/zynga/xlift_cli"
-
+source ~/.aliases
 
 # GOWSUME ASSUME ROLE:
 function gass () {
